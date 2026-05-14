@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>User List</title>
+
+<style>
+
+body{
+    font-family:Arial;
+    background:#f2f2f2;
+}
+
+.container{
+    width:600px;
+    margin:50px auto;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px gray;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th, td{
+    border:1px solid black;
+    padding:10px;
+    text-align:center;
+}
+
+th{
+    background:black;
+    color:white;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Registered Users</h2>
+
+<table>
+
+<thead>
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Password</th>
+</tr>
+</thead>
+
+<tbody id="userTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+<script>
+
+/* Get Data from Local Storage */
+let users = JSON.parse(localStorage.getItem("users")) || [];
+
+/* Table Body */
+let table = document.getElementById("userTable");
+
+/* Display Users */
+users.forEach(function(user){
+
+table.innerHTML += `
+<tr>
+<td>${user.name}</td>
+<td>${user.email}</td>
+<td>${user.password}</td>
+</tr>
+`;
+
+});
+
+</script>
+
+</body>
+</html>
