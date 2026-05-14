@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Modern jQuery Mobile Website</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- jQuery Mobile CSS -->
+<link rel="stylesheet"
+href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<!-- jQuery Mobile -->
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+<style>
+
+body{
+    font-family: Arial;
+}
+
+/* Hero Section */
+.hero{
+    text-align:center;
+    padding:40px 20px;
+    background:linear-gradient(to right,#007bff,#00c6ff);
+    color:white;
+    border-radius:10px;
+}
+
+.hero h1{
+    font-size:32px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+/* Card Design */
+.card{
+    background:white;
+    padding:15px;
+    margin-top:15px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Gallery Images */
+.gallery img{
+    width:100%;
+    border-radius:10px;
+    margin-top:10px;
+}
+
+/* Contact Form */
+input, textarea{
+    margin-top:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HOME PAGE -->
+<div data-role="page" id="home">
+
+<!-- HEADER -->
+<div data-role="header" data-theme="b">
+<h1>Mobile Web App</h1>
+</div>
+
+<!-- CONTENT -->
+<div role="main" class="ui-content">
+
+<!-- HERO -->
+<div class="hero">
+
+<h1>Welcome 🚀</h1>
+
+<p>Modern Mobile Website using jQuery Mobile</p>
+
+<a href="#services"
+class="ui-btn ui-btn-inline ui-corner-all ui-shadow ui-btn-b">
+Explore Services
+</a>
+
+</div>
+
+<!-- FEATURES -->
+<div class="card">
+
+<h3>Features</h3>
+
+<ul data-role="listview" data-inset="true">
+
+<li><a href="#">Responsive Design</a></li>
+
+<li><a href="#">Fast UI</a></li>
+
+<li><a href="#">Mobile Friendly</a></li>
+
+<li><a href="#">Easy Navigation</a></li>
+
+</ul>
+
+</div>
+
+<!-- GALLERY -->
+<div class="card gallery">
+
+<h3>Gallery</h3>
+
+<img src="https://picsum.photos/400/200?1">
+
+<img src="https://picsum.photos/400/200?2">
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+<div data-role="footer" data-theme="b">
+<h4>© 2026 Mobile Website</h4>
+</div>
+
+</div>
+
+<!-- SERVICES PAGE -->
+<div data-role="page" id="services">
+
+<!-- HEADER -->
+<div data-role="header" data-theme="b">
+
+<a href="#home" data-icon="back">Back</a>
+
+<h1>Services</h1>
+
+</div>
+
+<!-- CONTENT -->
+<div role="main" class="ui-content">
+
+<div class="card">
+
+<h3>Our Services</h3>
+
+<p>We provide:</p>
+
+<ul>
+<li>Web Development</li>
+<li>Mobile Website Design</li>
+<li>UI/UX Design</li>
+<li>Cloud Deployment</li>
+</ul>
+
+</div>
+
+<a href="#contact"
+class="ui-btn ui-btn-b ui-corner-all">
+Contact Us
+</a>
+
+</div>
+
+<!-- FOOTER -->
+<div data-role="footer" data-theme="b">
+<h4>Services Page</h4>
+</div>
+
+</div>
+
+<!-- CONTACT PAGE -->
+<div data-role="page" id="contact">
+
+<!-- HEADER -->
+<div data-role="header" data-theme="b">
+
+<a href="#services" data-icon="back">Back</a>
+
+<h1>Contact</h1>
+
+</div>
+
+<!-- CONTENT -->
+<div role="main" class="ui-content">
+
+<div class="card">
+
+<h3>Contact Form</h3>
+
+<input type="text" placeholder="Enter Name">
+
+<input type="email" placeholder="Enter Email">
+
+<textarea placeholder="Enter Message"></textarea>
+
+<button class="ui-btn ui-btn-b ui-corner-all">
+Send Message
+</button>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+<div data-role="footer" data-theme="b">
+<h4>Contact Page</h4>
+</div>
+
+</div>
+
+</body>
+</html>
