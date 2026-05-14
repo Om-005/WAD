@@ -1,0 +1,167 @@
+# Docker + Express Server Setup on Ubuntu
+
+## 1. Install Docker
+
+```bash
+sudo apt update
+sudo apt install docker.io -y
+```
+
+---
+
+## 2. Start Docker Service
+
+```bash
+sudo systemctl start docker
+sudo systemctl enable docker
+```
+
+---
+
+## 3. Check Docker Version
+
+```bash
+docker --version
+```
+
+---
+
+# Create Express Project
+
+## 4. Create Project Folder
+
+```bash
+mkdir express-docker
+cd express-docker
+```
+
+---
+
+## 5. Create server.js
+
+```bash
+nano server.js
+```
+
+Paste:
+
+```javascript
+const express = require('express');
+
+const app = express();
+
+app.get('/', (req, res) => {
+    res.send('Hello from Docker Express Server');
+});
+
+app.listen(3000, () => {
+    console.log('Server running on port 3000');
+});
+```
+
+Save:
+
+* CTRL + O
+* Enter
+* CTRL + X
+
+---
+
+## 6. Create package.json
+
+```bash
+nano package.json
+```
+
+Paste:
+
+```json
+{
+  "name": "express-docker",
+  "version": "1.0.0",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
+```
+
+Save and exit.
+
+---
+
+## 7. Create Dockerfile
+
+```bash
+nano Dockerfile
+```
+
+Paste:
+
+```dockerfile
+FROM node:18
+
+WORKDIR /app
+
+COPY package.json .
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 3000
+
+CMD ["node", "server.js"]
+```
+
+Save and exit.
+
+---
+
+## 8. Check Files
+
+```bash
+ls
+```
+
+Expected Output:
+
+```text
+Dockerfile
+package.json
+server.js
+```
+
+---
+
+# Docker Commands
+
+## 9. Build Docker Image
+
+```bash
+sudo docker build -t express-server .
+```
+
+---
+
+## 10. Run Docker Container
+
+```bash
+sudo docker run -d -p 3000:3000 express-server
+```
+
+---
+
+## 11. Check Running Containers
+
+```bash
+sudo docker ps
+```
+
+---
+
+## 12. Open in Browser
+
+```text
+http://localhost:3000
+```
